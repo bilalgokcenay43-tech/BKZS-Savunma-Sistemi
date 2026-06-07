@@ -12,9 +12,9 @@ from sklearn.ensemble import IsolationForest
 # ==========================================
 # ⚙️ KRİTİK GÜVENLİK AYARLARI 
 # ==========================================
-HEDEF_PC_ISMI = "Fatih"                 
-HEDEF_MAC = "60:45:bd:8d:7f:0b"         
-HEDEF_SEHIR = "Istanbul"                
+HEDEF_PC_ISMI = "KULLANICI_ADI"
+HEDEF_MAC = "XX:XX:XX:XX:XX:XX"
+HEDEF_SEHIR = "SEHIR"   
 CALISMA_SAATLERI = (8, 23)              
 DOGRULAMA_METNI = "BKZS-ULTRA-2026"     
 HIZ_ESIGI = 0.7                         
