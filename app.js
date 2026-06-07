@@ -985,6 +985,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('lockdown-unlock-btn').addEventListener('click', () => {
         const pass = document.getElementById('lockdown-pass-input').value;
+        //README Deomo Şifre
         if (pass === '28639') {
             addThreat('SİSTEM', 'Kilit şifresi DOĞRU. Sistem aktif ediliyor.', 'low');
             document.getElementById('lockdown-screen').classList.add('hidden');
@@ -1061,6 +1062,7 @@ function triggerSafeMode(score) {
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('safemode-unlock-btn').addEventListener('click', () => {
         const pass = document.getElementById('safemode-pass-input').value;
+            //README Demo Şifre
         if (pass === '28639') {
             stopAlarmSound();
             addThreat('SİSTEM', 'Recovery başarılı. Güvenli moddan çıkılıyor.', 'low');
@@ -1082,3 +1084,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.key === 'Enter') document.getElementById('safemode-unlock-btn').click();
     });
 });
+
+
+/*🔐 Demo Erişim Bilgileri
+| Safe Mode Recovery | — | 28639 |
+| Lockdown Kilidi | — | 28639 |
+
+> **Not:** Bu bir açık kaynak demo projesidir.
+> Şifreler kaynak kodda görünür durumdadır, bu normaldir.*/
