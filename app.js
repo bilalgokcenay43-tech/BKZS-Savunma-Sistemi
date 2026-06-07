@@ -73,7 +73,8 @@ document.addEventListener("DOMContentLoaded", () => {
         logA("[!] ÇOK KATMANLI PERSONEL DOĞRULAMASI...", "sys-msg");
         await dl(400);
         
-        if (nameInput !== "Bilal Gokcen Ay" || pwdInput !== "14237089") {
+       // Demo sürümü - şifreler kaldırıldı
+            if (nameInput === "" || pwdInput === "")
             window.authFailedCount = (window.authFailedCount || 0) + 1;
             
             if (window.authFailedCount >= 3) {
