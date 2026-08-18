@@ -66,11 +66,11 @@ BKZS-Enterprise-XDR/
 > **MİMARİ DENETİM VE KOD TABANI ANOMALİ RAPORU**
 > 
 > **Mevcut Durum Analizi:**  
-> Çalışma alanındaki `bkzs_ultra_savunma.py` ve `bkzs_anomali_tespit.py` dosyaları incelenmiş ve sistemin **Monolitik (Tek Parça) İcra Modeli** kullandığı tespit edilmiştir. 
+> Çalışma alanındaki `bkzs_ultra_savunma.py`, `bkzs_anomali_tespit.py` ve `bkzs_tam_savunma_paneli.py` dosyaları incelenmiş ve sistemin **Monolitik (Tek Parça) İcra Modeli** kullandığı tespit edilmiştir. 
 > 
 > **Tespit Edilen Kritik Eksiklikler:**
-> 1. **Modüler Sorumluluk Ayrımı (SoC) İhlali:** UI (`CTk`), Makine Öğrenmesi (`IsolationForest`), Kriptografi (`Fernet`), Telemetri Toplama ve Honeypot Yem Üretimi tek bir Python sınıfı (`BKZSTamKoruma`) altında birleştirilmiştir.
-> 2. **Dizin Yapısı Yokluğu:** Kurumsal SOC standartlarında olması gereken `core/`, `modules/siem/`, `modules/responder/` ve `modules/threat_hunting/` fiziki dizinleri workspace içerisinde oluşturulmamış, mantıksal katmanlar kod içerisine gömülmüştür.
+> 1. **Modüler Sorumluluk Ayrımı (SoC) İhlali:** UI (`CTk`), Makine Öğrenmesi (`IsolationForest`), Kriptografi (`Fernet`), Telemetri Toplama ve Honeypot Yem Üretimi tek bir Python sınıfı (`BKZSTamKoruma` / `BKZSTamSat`) altında birleştirilmiştir.
+> 2. **Fiziki Dizin Yapısı Yokluğu:** Kurumsal SOC standartlarında olması gereken `core/`, `modules/siem/`, `modules/responder/` ve `modules/threat_hunting/` fiziki dizinleri workspace içerisinde oluşturulmamış, mantıksal katmanlar dosya seviyesine gömülmüştür.
 > 3. **Asenkron Event Bus Yokluğu:** Sinyal akışları ve anomali uyarıları thread-safe asenkron bir kuyruk (Event Bus / Redis / ZeroMQ) üzerinden değil, CustomTkinter `after()` döngüsü içerisinden senkron olarak yürütülmektedir.
 > 
 > **Düzeltici Faaliyet Blueprint'i:**  
@@ -78,7 +78,7 @@ BKZS-Enterprise-XDR/
 
 ---
 
-## 3. ENDÜSTRİYEL TEKNİK MİMARİ VE SİSTEM TOLOJİSİ
+## 3. ENDÜSTRİYEL TEKNİK MİMARİ VE SİSTEM TOPOLOJİSİ
 
 BKZS mimarisi, Zero-Trust (Sıfır Güven) prensibi üzerine kurulmuştur. Sistem, fiziksel RF katmanından kullanıcı biyometrik davranışına kadar 5 ayrı katmanda telemetri toplar.
 
@@ -141,7 +141,7 @@ sequenceDiagram
     Attacker->>Collector: Sahte GNSS Sinyali Enjekte Eder (Pos: 500m Leap)
     Collector->>ML: Telemetri Verisini Gönderir (SNR:50, Pos:500, Dop:0.1)
     ML->>Core: Anomali Tahmini (-1: Spoofing Detected)
-    Core->>Attacker: SARI ALARM: Dynamic Chrono-Shift TOTP Challange
+    Core->>Attacker: SARI ALARM: Dynamic Chrono-Shift TOTP Challenge
     Attacker->>Core: Hatalı / Tahmini Kod Gönderimi
     Note over Core: Hata Sayısı = 2 (KIRMIZI ALARM TETİKLENDİ)
     Core->>OS: Netsh Firewall Drop Rules Enjekte Et & İşlemleri Dondur

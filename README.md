@@ -73,6 +73,15 @@ class SecurityProfile:
 
 ---
 
+### 📑 Enterprise Engineering Dossier & Architectural Manifesto
+
+> [!IMPORTANT]
+> **BKZS Enterprise Security Architecture Dossier (`EED-BKZS-2026-REV4`)** dokümanı projenin kök dizinine eklenmiştir.
+> Zero-Trust sinyal doğrulama, Anti-Spoofing XDR mimarisi, çok katmanlı tehdit korelasyonu ve otonom mitigasyon detayları için:  
+> 🔗 **[BKZS Enterprise Engineering Dossier Dokümanını İnceleyin](BKZS_Enterprise_Engineering_Dossier.md)**
+
+---
+
 ### 💻 Terminal Output (Simulation)
 
 ```bash
