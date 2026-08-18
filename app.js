@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-429: Too Many Requests
-For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service).
-=======
 // ================================================================
 //  BKZS AÇIK KAYNAKLI ANOMALİ TESPİT PROTOTİPİ
 //  Gerçekçi GNSS Sinyal Simülasyonu + 3 Katmanlı Tespit Motoru
@@ -1096,4 +1092,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 > **Not:** Bu bir açık kaynak demo projesidir.
 > Şifreler kaynak kodda görünür durumdadır, bu normaldir.*/
->>>>>>> 3a4203fc4b9d43611a80e1d45766fb2722950727
